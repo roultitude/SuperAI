@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Field Example</title>
+    <title>Form Post Example</title>
 </head>
 <body>
 
-    <form>
+    <form id="myForm">
         <label for="userInput">Enter Text:</label>
         <input type="text" id="userInput" name="userInput" placeholder="Type something...">
         <button type="button" onclick="submitForm()">Enter</button>
@@ -15,8 +15,36 @@
 
     <script>
         function submitForm() {
-            // You can add JavaScript functionality here
-            alert('You entered: ' + document.getElementById('userInput').value);
+            // Get the form data
+            var userInputValue = document.getElementById('userInput').value;
+
+            // Replace 'your_target_url' with the actual URL where you want to send the POST request
+            var targetUrl = 'your_target_url';
+
+            // Create a new FormData object and append the form data
+            var formData = new FormData();
+            formData.append('userInput', userInputValue);
+
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Configure it as a POST request to the target URL
+            xhr.open('POST', targetUrl, true);
+
+            // Set up a callback function to handle the response
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Request was successful, handle the response here
+                    console.log('POST request successful');
+                    console.log(xhr.responseText);
+                } else {
+                    // Request failed, handle the error here
+                    console.error('POST request failed');
+                }
+            };
+
+            // Send the FormData as the request body
+            xhr.send(formData);
         }
     </script>
 
