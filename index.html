@@ -18,12 +18,12 @@
             // Get the form data
             var userInputValue = document.getElementById('userInput').value;
 
-            // Replace 'your_target_url' with the actual URL where you want to send the POST request
-            var targetUrl = 'your_target_url';
+            // Specify the target URL with the desired endpoint
+            var targetUrl = 'https://comfortable-underwear-bull.cyclic.app/submit_string';
 
             // Create a new FormData object and append the form data
             var formData = new FormData();
-            formData.append('userInput', userInputValue);
+            formData.append('string', userInputValue);
 
             // Create a new XMLHttpRequest object
             var xhr = new XMLHttpRequest();
