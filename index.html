@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Field Example</title>
+</head>
+<body>
+
+    <form>
+        <label for="userInput">Enter Text:</label>
+        <input type="text" id="userInput" name="userInput" placeholder="Type something...">
+        <button type="button" onclick="submitForm()">Enter</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // You can add JavaScript functionality here
+            alert('You entered: ' + document.getElementById('userInput').value);
+        }
+    </script>
+
+</body>
+</html>
