@@ -75,6 +75,8 @@
             // Get the form data
             var userInputValue = document.getElementById('userInput').value;
 
+            if (userInputValue == '') return;
+
             // Specify the target URL with the desired endpoint
             var targetUrl = 'https://superai-nu.vercel.app/submit_string';
 
